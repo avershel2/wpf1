@@ -72,7 +72,8 @@ namespace WpfApp1
             }
             else
             {
-
+                NavigationService.Navigate(new Page2(comboBox1.Text, customer.Manhole));
+                //myFrame.Navigate(new System.Uri("Page1.xaml",UriKind.RelativeOrAbsolute));
             }
         }
 
