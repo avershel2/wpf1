@@ -23,6 +23,17 @@ namespace WpfApp1
         public Page2(string DrainageArea, string ManholeID )
         {
             InitializeComponent();
+            manholeid.Content = "Manhole ID: " + ManholeID;
+            drainagearea.Content = "Drainage Area: " + DrainageArea;
+            InspectionDateTime.Content = "Inspection Date/Time: " + DateTime.Now;
+            ParentJobNumber.Content = "Parent Job Number: " + "55";
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+
+                NavigationService.Navigate(new Page1());
+            
         }
     }
 }

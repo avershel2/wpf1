@@ -9,6 +9,37 @@
       Title="Page2">
 
     <Grid>
-        
+        <StackPanel   Orientation="Vertical">
+            <StackPanel   Orientation="Horizontal">
+                <Label x:Name="manholeid"  Content="ManholeID: "  ></Label>
+                <Label x:Name="drainagearea" Content="Drainage Area: "  ></Label>
+                <Label x:Name="InspectionDateTime" Content="Inspection Date/Time: "  ></Label>
+                <Label x:Name="ParentJobNumber" Content="Parent Job Number: "  ></Label>
+            </StackPanel>
+            <TabControl>
+                <TabItem Header="Details">
+                    <Label Content="Details Content goes here..." />
+                </TabItem>
+                <TabItem Header="Exterior" >
+                    <Label Content="Exterior Content goes here..." />
+                </TabItem>
+                <TabItem Header="Interior" >
+                    <Label Content="Interior Content goes here..." />
+                </TabItem>
+                <TabItem Header="Defects" >
+                    <Label Content="Defects Content goes here..." />
+                </TabItem>
+                <TabItem Header="QA/QC" >
+                    <Label Content="QA/QC Content goes here..." />
+                </TabItem>
+            </TabControl>
+            <StackPanel   Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="Save"  Content="Save" Width="100" Height="30" Margin="10" ></Button>
+                <Button x:Name="Close"  Content="Close" Width="100" Height="30" Margin="10" Click="CloseButton_Click" ></Button>
+
+            </StackPanel>
+
+        </StackPanel>
+
     </Grid>
 </Page>
