@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,19 +51,16 @@ namespace WpfApp1
 
             if (s != "Make Selection...")
             {
+                InspectionService inspectionService = new InspectionService();
+                var Manholes = inspectionService.GetManholeByDrainageArea(s);
                 List<Author> authors = new List<Author>();
-                authors.Add(new Author()
+                foreach(var manhole in Manholes)
                 {
-                    Manhole = s + "-1"
-                });
-                authors.Add(new Author()
-                {
-                    Manhole = s + "-2"
-                });
-                authors.Add(new Author()
-                {
-                    Manhole = s + "-3"
-                });
+                    authors.Add(new Author()
+                    {
+                        Manhole = manhole
+                    });
+                }
 
                 dataGrid1.ItemsSource = authors;
             }
@@ -93,6 +91,7 @@ namespace WpfApp1
 
     public class Author
     {
+        [DisplayName("Manhole ID")]
         public string Manhole { get; set; }
     }
 

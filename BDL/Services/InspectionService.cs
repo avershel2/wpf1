@@ -26,6 +26,17 @@ namespace DAL.Services
             }
         }
 
-        
+        public List<string> GetManholeByDrainageArea(string DrainageArea)
+        {
+            using (var conn = new OleDbConnection(_ConnectionString))
+            {
+                conn.Open();
+                var sql = @"select insp.Manhole_Number from MH_Inspections insp where insp.Drainage_Area = '" + DrainageArea + "' Order By insp.Manhole_Number";
+                var list = conn.Query<string>(sql);
+                return list.ToList();
+            }
+        }
+
+
     }
 }

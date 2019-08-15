@@ -10,18 +10,24 @@
 
     <Grid>
         <StackPanel   Orientation="Vertical">
-            <Label  Content="Select Drainage Area:"  ></Label>
-            <ComboBox Name="comboBox1" DropDownClosed="ComboBox_DropDownClosed">
+            <Label  Content="Select Drainage Area:"></Label>
 
-            </ComboBox>
-            <Button  Content="Get Manholes" Width="100" Height="30" Margin="10" HorizontalAlignment="Left"></Button>
+            <ComboBox Name="comboBox1" DropDownClosed="ComboBox_DropDownClosed"></ComboBox>
+            
+            <TextBlock Text="&#xD;"/>
+            
             <DataGrid  
                 ItemsSource="{Binding Authors}"
-                       GridLinesVisibility="Vertical" HeadersVisibility="All" 
-          Height="200" 
-          Name="dataGrid1" 
-           RowHeight="30" ColumnWidth="255" Margin="10,0"/>
+                GridLinesVisibility="Vertical"
+                HeadersVisibility="All"               
+                Height="200" 
+                Name="dataGrid1" 
+                RowHeight="30" 
+                ColumnWidth="255" 
+                Margin="10,0"/>
+            
             <Button x:Name="OKButton"  Content="OK" Width="100" Height="30" Margin="10" HorizontalAlignment="Left" Click="OKButton_Click"></Button>
+            
         </StackPanel>
 
 
