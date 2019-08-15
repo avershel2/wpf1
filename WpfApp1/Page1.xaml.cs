@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace WpfApp1
 {
     /// <summary>
@@ -24,6 +26,14 @@ namespace WpfApp1
         public Page1()
         {
             InitializeComponent();
+            InspectionService inspectionService = new InspectionService();
+            List<string> DrainageAreas = new List<string>();
+            DrainageAreas.Add("Make Selection...");
+            comboBox1.SelectedIndex = 0;
+
+            DrainageAreas.AddRange(inspectionService.GetDrainageAreas());
+
+            comboBox1.ItemsSource = DrainageAreas;
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -36,6 +46,7 @@ namespace WpfApp1
         {
             string s = comboBox1.Text;
             ComboBox cmb = sender as ComboBox;
+
 
             if (s != "Make Selection...")
             {

@@ -12,10 +12,7 @@
         <StackPanel   Orientation="Vertical">
             <Label  Content="Select Drainage Area:"  ></Label>
             <ComboBox Name="comboBox1" DropDownClosed="ComboBox_DropDownClosed">
-                <ComboBoxItem IsSelected="True">Make Selection...</ComboBoxItem>
-                <ComboBoxItem>201NE05</ComboBoxItem>
-                <ComboBoxItem >201NE06</ComboBoxItem>
-                <ComboBoxItem>201NE07</ComboBoxItem>
+
             </ComboBox>
             <Button  Content="Get Manholes" Width="100" Height="30" Margin="10" HorizontalAlignment="Left"></Button>
             <DataGrid  
